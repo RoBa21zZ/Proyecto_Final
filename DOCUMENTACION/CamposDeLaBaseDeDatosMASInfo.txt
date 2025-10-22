@@ -1,0 +1,34 @@
+Campos que va a tener la base de datos ITV:
+-Cliente:
+	id_cliente 		INT,AUTGENERATE,PK
+	nombre 			varchar
+	apellido 		varchar
+	dni 			varchar(9)
+	telefono 		varchar(9)
+	email		
+	contraseña
+-vehiculos
+	id_vehiculo		int,pk
+	id_usuario		int fk
+	matricula		varchar(mirar el tema como saber si esta bien la matricula)
+	marca			varchar
+	modelo 			varchar
+	tipo			varhcar(estos son tipos fijos)
+	año_matriculacion	YEAR
+	
+-citas:
+	id_cita			int,pk
+	id_usuario		int,fk
+	id_vehiculo		int,fk
+	fecha			DATE
+	Hora			TIME
+	tipo_revision
+	estado_reviosion	(En que momento esta pendiente) 
+	
+
+Esquema de la aplicacion:
+	Una pagina de inicio en la que el usuarrio peueda ver de forma general.
+		Un aparatado en el que pueda hcaer un cita previda, si no tiene cuenta que inicie sesion.
+	En su pagina de usuario que pueda ver sus datos y sus  vehiculos con todos los datos.
+	
+	A la hora de la cita previa que le aparezca una calendatio cohn las fechas posibles y escoja una. si no tiene un coche guardado que se guarde el 	que ha metido. los cochjes tienen matricula tipo de vevhiculo y fecha de matriculacion. en funcion la fecha el aviso de cuando tiene que pasar 	la proxima revision cambia.
