@@ -1,0 +1,22 @@
+1. Introducción
+
+	1.1. Descripción del objeto de estudio; a quién va dirigida; qué existe hasta ahora; etc.
+
+	1.2. Objetivo
+2. Análisis, diseño y desarrollo 
+	2.1. Estimación de costes. Tiempo invertido. Justificación
+	2.2. Tecnologías y herramientas utilizadas (nombrarlas y pequeña descripción, justificación de selección) 
+	2.3. Diseño de interfaz (diseño general de pantallas, estructura, paleta de colores, facilidades de uso, elementos destacados, etc.). 
+	2.4. Concepción de la base de datos (MER, diagrama lógico de tablas, etc.)  
+	2.5. Diseño y arquitectura de la solución (módulos, patrones y/o estrategias utilizadas en la programación, diseño de clases (si procede), 			ayudas concebidas, manipulación de errores, etc.)
+	2.6. Principales dificultades encontradas en el desarrollo del proyecto y cómo se han afrontado	2.7. Despliegue (dónde está alojada, cómo acceder (usuarios, contraseñas), qué se necesita, etc.)
+3. Conclusiones y posibles ampliaciones ............................................................ 6 
+4. Bibliografía y webgrafía...................................................................................... 6
+	
+
+
+Preguntar que coño son estas cosas:
+	Sobre el indice de la documentacion:
+		2.5 Diseño y arquitectura de la solución (ayudas concebidas)
+		Preguntar si hay que hacer la tabla de contenidos.
+		

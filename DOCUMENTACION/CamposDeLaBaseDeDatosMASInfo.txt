@@ -32,3 +32,17 @@ Esquema de la aplicacion:
 	En su pagina de usuario que pueda ver sus datos y sus  vehiculos con todos los datos.
 	
 	A la hora de la cita previa que le aparezca una calendatio cohn las fechas posibles y escoja una. si no tiene un coche guardado que se guarde el 	que ha metido. los cochjes tienen matricula tipo de vevhiculo y fecha de matriculacion. en funcion la fecha el aviso de cuando tiene que pasar 	la proxima revision cambia.
+
+
+
+
+Cosas en las que hay que tener en cuenta:
+	1. A la hora de introducir un usuario hacer una comprobacion del dni para ver que no está en la base de datos, en caso de que no esté se 
+	crea el usuario de lo contrario se manda un mensaje al usuario.
+		1.1 Pensar en todos los datos que hay que validar.
+	
+	2. Hacer gestio de roles ¿Boton que te muestre un dashborad de los vehiculos y usuarios?
+
+	
+
+	
