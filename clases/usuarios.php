@@ -11,6 +11,46 @@ class Usuarios {
        $this->conn = $db;
     }
     
+    public function registerUsuario($nombre, $fecha_nacimiento,$contra){
+        $sqlComprobar = "Select * from usuario where nombre = ?";
+        $stmtComprobar = $this->conn->prepare($sqlComprobar);
+        $stmtComprobar->execute([$nombre]);
+
+        if($stmtComprobar->fetch(PDO::FETCH_ASSOC)){
+            return false;
+        }
+
+        $sql = "INSERT INTO usuario (nombre,fechaDeNacimiento,contra) VALUES(?,?,?)";
+        $hash_password = password_hash($contra, PASSWORD_DEFAULT);
+        $stmt = $this->conn->prepare($sql);    
+        
+        return $stmt->execute([$nombre,$fecha_nacimiento,$hash_password]);
+            
+        
+    }
+
+    public function loginUsuario($nombre,$contra){
+        $sql = "Select * from usuario where nombre = ?";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute([$nombre]);
+        $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if($usuario && password_verify($contra,$usuario['contra'])){
+            session_regenerate_id(true);
+            $_SESSION['usuario_id'] = $usuario['id'];
+            $_SESSION['usuario_nombre'] = $usuario['nombre'];
+            $_SESSION['usuario_fechaDeNacimiento'] = $usuario['fechaDeNacimiento'];
+            return true;
+        }
+
+        return false;
+    }
+
+    public function logoutUsuario(){
+        session_unset();
+        session_destroy();
+    }
+
     public function obtenerUsuarios(){
         $sql = "SELECT * FROM usuario";
         $stmt = $this->conn->prepare($sql);

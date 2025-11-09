@@ -1,6 +1,10 @@
 <?php
+    session_start();
+    if(!isset($_SESSION["nombre"])){
+        header("Location: login.php");
+        exit;
+    }
 
-use function PHPSTORM_META\type;
 
     require_once "clases/usuarios.php";    
 
@@ -64,7 +68,9 @@ use function PHPSTORM_META\type;
 </head>
 
 <body>
-
+    <button>
+        <a href="logout.php">Cerrar sesión</a>
+    </button>
     <?php
     setlocale(LC_ALL, 'es_ES.UTF-8');
     $ola = "Hola mundo";
