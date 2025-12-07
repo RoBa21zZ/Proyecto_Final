@@ -1,5 +1,5 @@
 <?php
-session_start();
+/* session_start();
 if (isset($_SESSION["nombre"])) {
     header("Location: index.php");
     exit;
@@ -28,6 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 }
+ */
 
 ?>
 
@@ -61,3 +62,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </body>
 
 </html>
+
+
+<?php
+$fecha1 = new DateTime('2025-04-21 15:13');
+$fechaActual = new DateTime();
+
+echo "Mi fecha " . $fecha1->format('Y-m-d H:i') . " Fecha actual " . $fechaActual->format('Y-m-d H:i');
+
+if ($fecha1 !== $fechaActual) {
+    echo "NO";
+}
+$diff = $fechaActual->diff($fecha1);
+
+echo $diff->days . " minutos " . $diff->i;
+
+?>

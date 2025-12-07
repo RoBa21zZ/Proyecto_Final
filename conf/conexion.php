@@ -5,7 +5,7 @@
         private $dbname = "pruebas";
         private $user   = "root";
         private $pass   = "";
-        //private $conexion;
+        private $conexion;
         
         public function conectar() {
             

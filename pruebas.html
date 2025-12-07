@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    
+  </head>
+  <body>
+    <input type="date" id="fecha_cita" name="fecha_cita" />
+    <select name="hora_cita" id="hora_cita">
+
+    </select>
+    <script>
+      const fechaInput = document.getElementById("fecha_cita");
+
+      fechaInput.addEventListener("input", function () {
+        const date = new Date(this.value);
+        const day = date.getDay();
+        if (day === 0 || day === 6) {
+          alert("No se pueden seleccionar fines de semana.");
+          this.value = "";
+        }
+      });
+
+      const horaSelect = document.getElementById("hora_cita");
+      const inicio = 8;
+      const final = 21;
+      for(let h = inicio; h <=final; h++){
+        for(let m = 0; m < 60; m += 15){
+            let hora = (h < 10 ? '0' + h :h) + ':' + (m === 0 ? '00' : m);
+            let option = document.createElement("option");
+            option.value = hora;
+            option.text = hora;
+            horaSelect.appendChild(option);
+        }
+      }
+    </script>
+</body>
+</html>
